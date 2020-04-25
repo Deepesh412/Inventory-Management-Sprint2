@@ -17,14 +17,14 @@ public class SupplierDetails {
 	private String email_id;
 	
 	@OneToOne(mappedBy ="supplierdetails")
-	private RawMaterialOrderDetails RMorderdetails;
+	//private RawMaterialOrderDetails RMorderdetails;
 	
-	public RawMaterialOrderDetails getRMorderdetails() {
+	/*public RawMaterialOrderDetails getRMorderdetails() {
 		return RMorderdetails;
 	}
 	public void setRMorderdetails(RawMaterialOrderDetails rMorderdetails) {
 		RMorderdetails = rMorderdetails;
-	}
+	}*/
 	
 	public int getS_id() {
 		return s_id;

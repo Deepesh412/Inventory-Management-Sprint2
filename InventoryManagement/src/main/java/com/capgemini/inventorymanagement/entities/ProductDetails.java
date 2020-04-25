@@ -19,14 +19,14 @@ public class ProductDetails {
     private Date expiry_date;
     
     @OneToOne(mappedBy = "productdetails")
-    private TrackProductOrder trackproductorder;
+    //private TrackProductOrder trackproductorder;
     
-	public TrackProductOrder getTrackproductorder() {
+	/*public TrackProductOrder getTrackproductorder() {
 		return trackproductorder;
 	}
 	public void setTrackproductorder(TrackProductOrder trackproductorder) {
 		this.trackproductorder = trackproductorder;
-	}
+	}*/
 	public int getP_id() {
 		return p_id;
 	}

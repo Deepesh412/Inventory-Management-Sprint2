@@ -23,13 +23,13 @@ public class RawMaterialDetails
 	   // private TrackRawMaterialOrder trackrawmaterialorder;
 	    
 	    
-		//public TrackRawMaterialOrder getTrackrawmaterialorder() {
-			//return trackrawmaterialorder;
-	//	}
+		/*public TrackRawMaterialOrder getTrackrawmaterialorder() {
+			return trackrawmaterialorder;
+		}
 
-		//public void setTrackrawmaterialorder(TrackRawMaterialOrder trackrawmaterialorder) {
-			//this.trackrawmaterialorder = trackrawmaterialorder;
-		//}
+		public void setTrackrawmaterialorder(TrackRawMaterialOrder trackrawmaterialorder) {
+			this.trackrawmaterialorder = trackrawmaterialorder;
+		}*/
 
 		
 		public int getRm_id() {

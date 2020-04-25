@@ -2,7 +2,7 @@ package com.capgemini.inventorymanagement.entities;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -17,12 +17,12 @@ public class TrackProductOrder {
 	private int tracking_id;
 	private Date exit_date;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "product_id")
+	@OneToOne
+	@JoinColumn(name = "product_id", referencedColumnName = "p_id")
 	private ProductDetails productdetails;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "productorder_id")
+	@OneToOne
+	@JoinColumn(name = "productorder_id", referencedColumnName = "order_id")
 	private ProductOrderDetails productorderdetails;
 
 	public int getTracking_id()

@@ -17,7 +17,7 @@ public class DistributorDetails {
 	private String email_id;
 	
 	@OneToOne(mappedBy = "Distributordetails")
-	private ProductOrderDetails productorderdetails;
+	//private ProductOrderDetails productorderdetails;
 	
 
 	public int getD_id() {
@@ -68,12 +68,12 @@ public class DistributorDetails {
 		this.email_id = email_id;
 	}
 
-	public ProductOrderDetails getProductorderdetails() {
+	/*public ProductOrderDetails getProductorderdetails() {
 		return productorderdetails;
 	}
 
 	public void setProductorderdetails(ProductOrderDetails productorderdetails) {
 		this.productorderdetails = productorderdetails;
-	}
+	}*/
 
 	}

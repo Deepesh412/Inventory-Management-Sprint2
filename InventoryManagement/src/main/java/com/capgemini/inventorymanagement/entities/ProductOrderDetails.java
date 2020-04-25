@@ -2,7 +2,7 @@ package com.capgemini.inventorymanagement.entities;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -24,20 +24,20 @@ public class ProductOrderDetails {
 	private String delivery_status;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "distributor_id")
+	@OneToOne
+	@JoinColumn(name = "distributor_id", referencedColumnName = "D_id")
 	private DistributorDetails Distributordetails;
 	
 	
 	@OneToOne(mappedBy = "productorderdetails")
-	private TrackProductOrder trackproductorder;
+//	private TrackProductOrder trackproductorder;
 	
-	public TrackProductOrder getTrackproductorder() {
-		return trackproductorder;
-	}
-	public void setTrackproductorder(TrackProductOrder trackproductorder) {
-		this.trackproductorder = trackproductorder;
-	}
+//	public TrackProductOrder getTrackproductorder() {
+//		return trackproductorder;
+//	}
+//	public void setTrackproductorder(TrackProductOrder trackproductorder) {
+//		this.trackproductorder = trackproductorder;
+//	}
 	public double getPrice_per_unit() {
 		return price_per_unit;
 	}

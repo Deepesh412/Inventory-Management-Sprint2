@@ -1,7 +1,7 @@
 package com.capgemini.inventorymanagement.entities;
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "RawMaterialorderdetails")
+@Table(name = "Rawmaterialorderdetails")
 
 public class RawMaterialOrderDetails {
 
@@ -24,12 +24,12 @@ public class RawMaterialOrderDetails {
 	private Date delivery_date;
 	private String delivery_status;
 	
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name= "Supplier_id")
+	@OneToOne
+	@JoinColumn(name= "Supplier_id", referencedColumnName = "s_id")
 	private SupplierDetails supplierdetails;
 	
-	@OneToOne(mappedBy = "RawMaterialorderdetails")
-	private TrackRawMaterialOrder trackrawmaterialorder;
+	@OneToOne(mappedBy = "Rawmaterialorderdetails")
+	/*private TrackRawMaterialOrder trackrawmaterialorder;
 	
 	
 	public TrackRawMaterialOrder getTrackrawmaterialorder() {
@@ -38,7 +38,7 @@ public class RawMaterialOrderDetails {
 
 	public void setTrackrawmaterialorder(TrackRawMaterialOrder trackrawmaterialorder) {
 		this.trackrawmaterialorder = trackrawmaterialorder;
-	}
+	}*/
 
 	public SupplierDetails getSupplierdetails() {
 		return supplierdetails;
