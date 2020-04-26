@@ -64,7 +64,7 @@ public class RawMaterialOrderDetailsController {
 			}
 	
     //Update RawMaterialOrder
-    @PutMapping("/UpdateUser")
+    @PutMapping("/UpdateRawMaterialDetail")
 	public ResponseEntity<String> updateRawMaterialOrder(@RequestBody RawMaterialOrderDetails r)
 		{
     	RawMaterialOrderDetails e = serviceobj.updateRawMaterialOrder(r);

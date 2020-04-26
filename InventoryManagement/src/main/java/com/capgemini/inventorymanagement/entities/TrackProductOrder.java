@@ -21,10 +21,42 @@ public class TrackProductOrder {
 	@JoinColumn(name = "product_id", referencedColumnName = "p_id")
 	private ProductDetails productdetails;
 	
+	/*@OneToOne
+	@JoinColumn(name = "product_name", referencedColumnName = "item_name")
+	private ProductDetails productdetails;
+	
+	@OneToOne
+	@JoinColumn(name = "quantityunit", referencedColumnName = "quantity_unit")
+	private ProductDetails productdetails;
+	
+	@OneToOne
+	@JoinColumn(name = "priceperunit", referencedColumnName = "price_per_unit")
+	private ProductDetails productdetails;
+	
+	@OneToOne
+	@JoinColumn(name = "manufacturedate", referencedColumnName = "manufacturing_date")
+	private ProductDetails productdetails;
+	
+	@OneToOne
+	@JoinColumn(name = "expirydate", referencedColumnName = "expiry_date")
+	private ProductDetails productdetails;*/
+	
 	@OneToOne
 	@JoinColumn(name = "productorder_id", referencedColumnName = "order_id")
 	private ProductOrderDetails productorderdetails;
-
+	
+	/*@OneToOne
+	@JoinColumn(name = "orderdate", referencedColumnName = "order_date")
+	private ProductOrderDetails productorderdetails;
+	
+	@OneToOne
+	@JoinColumn(name = "deliverydate", referencedColumnName = "delivery_date")
+	private ProductOrderDetails productorderdetails;
+	
+	@OneToOne
+	@JoinColumn(name = "deliverystatus", referencedColumnName = "delivery_status")
+	private ProductOrderDetails productorderdetails;*/
+	
 	public int getTracking_id()
 	{
 		return tracking_id;
@@ -58,5 +90,6 @@ public class TrackProductOrder {
 		this.productorderdetails = productorderdetails;
 	}
 
+	
 	
 }
