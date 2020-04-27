@@ -46,16 +46,16 @@ public class RawMaterialOrderDetailsController {
 
 	//Get all RawMaterialOrders
 	@GetMapping("/GetAllRawMaterialOrders")
-	private ResponseEntity<List<RawMaterialOrderDetails>> getAllRawMaterialOrders() 
+	public ResponseEntity<List<RawMaterialOrderDetails>> getAllRawMaterialOrders() 
 	    {
-		List<RawMaterialOrderDetails> RawMaterialOrderlist = serviceobj.getAllRawMaterialOrders();
-		return new ResponseEntity<List<RawMaterialOrderDetails>>(RawMaterialOrderlist, new HttpHeaders(), HttpStatus.OK);
+		List<RawMaterialOrderDetails> rawMaterialOrderlist = serviceobj.getAllRawMaterialOrders();
+		return new ResponseEntity<List<RawMaterialOrderDetails>>(rawMaterialOrderlist, new HttpHeaders(), HttpStatus.OK);
         }
 	
 	// Get Particular RawMaterialorderDetail
-			@GetMapping("/GetRawmaterialOrderDetail/{order_id}")
-			private ResponseEntity<RawMaterialOrderDetails> getRawMaterialOrderDetailsById(@PathVariable("order_id") int order_id) {
-				RawMaterialOrderDetails d = serviceobj.getRawMaterialOrderDetailById(order_id);
+			@GetMapping("/GetRawmaterialOrderDetail/{orderid}")
+			public ResponseEntity<RawMaterialOrderDetails> getRawMaterialOrderDetailsById(@PathVariable("orderid") int orderid) {
+				RawMaterialOrderDetails d = serviceobj.getRawMaterialOrderDetailById(orderid);
 				if (d == null) {
 					throw new IdNotFoundException("Id does not exist,so we couldn't fetch details");
 				} else {
@@ -76,10 +76,10 @@ public class RawMaterialOrderDetailsController {
 		}
 		
 	// Delete RawMaterialOrder
-	@DeleteMapping("/DeleteRawMaterialOrder/{order_id}")
-	private ResponseEntity<String> deleteRawMaterialOrder(@PathVariable("order_id") int order_id)
+	@DeleteMapping("/DeleteRawMaterialOrder/{orderid}")
+	public ResponseEntity<String> deleteRawMaterialOrder(@PathVariable("orderid") int orderid)
 		{
-		RawMaterialOrderDetails e = serviceobj.deleteRawMaterialOrder(order_id);
+		RawMaterialOrderDetails e = serviceobj.deleteRawMaterialOrder(orderid);
 			if (e == null) {
 				throw new IdNotFoundException("Delete Operation Unsuccessful,Provided Id does not exist");
 			} else {

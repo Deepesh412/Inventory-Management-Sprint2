@@ -19,31 +19,26 @@ public class ProductOrderDetailsServiceImpl implements ProductOrderDetailsServic
 	
 	@Override
 	public ProductOrderDetails addProductOrder(ProductOrderDetails p) {
-		// TODO Auto-generated method stub
 		return dao.addProductOrder(p);
 	}
 
 	@Override
 	public List<ProductOrderDetails> getAllProductDetails() {
-		// TODO Auto-generated method stub
 		return dao.getAllProductDetails();
 	}
 
 	@Override
-	public ProductOrderDetails getProductOrderDetailsById(int order_id) {
-		// TODO Auto-generated method stub
-		return dao.getProductOrderDetailsById(order_id);
+	public ProductOrderDetails getProductOrderDetailsById(int orderid) {
+		return dao.getProductOrderDetailsById(orderid);
 	}
 
 	@Override
-	public ProductOrderDetails deleteProductOrder(int order_id) {
-		// TODO Auto-generated method stub
-		return dao.deleteProductOrder(order_id);
+	public ProductOrderDetails deleteProductOrder(int orderid) {
+		return dao.deleteProductOrder(orderid);
 	}
 
 	@Override
 	public ProductOrderDetails updateproductorder(ProductOrderDetails p) {
-		// TODO Auto-generated method stub
 		return dao.updateproductorder(p);
 	}
 

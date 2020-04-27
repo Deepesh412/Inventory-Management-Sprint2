@@ -10,9 +10,9 @@ public interface RawMaterialOrderDetailsService
 
 	List<RawMaterialOrderDetails> getAllRawMaterialOrders();
 
-	RawMaterialOrderDetails getRawMaterialOrderDetailById(int order_id);
+	RawMaterialOrderDetails getRawMaterialOrderDetailById(int orderid);
 	
-	RawMaterialOrderDetails deleteRawMaterialOrder(int order_id);
+	RawMaterialOrderDetails deleteRawMaterialOrder(int orderid);
 
 	RawMaterialOrderDetails updateRawMaterialOrder(RawMaterialOrderDetails r);
 

@@ -2,8 +2,9 @@ package com.capgemini.inventorymanagement.entities;
 
 import java.sql.Date;
 
-//import javax.persistence.CascadeType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -14,64 +15,31 @@ import javax.persistence.Table;
 public class TrackProductOrder {
 
 	@Id
-	private int tracking_id;
-	private Date exit_date;
+	private int trackingid;
+	private Date exitdate;
 	
-	@OneToOne
-	@JoinColumn(name = "product_id", referencedColumnName = "p_id")
+	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+	@JoinColumn(name = "productdetails", referencedColumnName = "productid")
 	private ProductDetails productdetails;
 	
-	/*@OneToOne
-	@JoinColumn(name = "product_name", referencedColumnName = "item_name")
-	private ProductDetails productdetails;
-	
-	@OneToOne
-	@JoinColumn(name = "quantityunit", referencedColumnName = "quantity_unit")
-	private ProductDetails productdetails;
-	
-	@OneToOne
-	@JoinColumn(name = "priceperunit", referencedColumnName = "price_per_unit")
-	private ProductDetails productdetails;
-	
-	@OneToOne
-	@JoinColumn(name = "manufacturedate", referencedColumnName = "manufacturing_date")
-	private ProductDetails productdetails;
-	
-	@OneToOne
-	@JoinColumn(name = "expirydate", referencedColumnName = "expiry_date")
-	private ProductDetails productdetails;*/
-	
-	@OneToOne
-	@JoinColumn(name = "productorder_id", referencedColumnName = "order_id")
+	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+	@JoinColumn(name = "productorderdetails", referencedColumnName = "orderid")
 	private ProductOrderDetails productorderdetails;
-	
-	/*@OneToOne
-	@JoinColumn(name = "orderdate", referencedColumnName = "order_date")
-	private ProductOrderDetails productorderdetails;
-	
-	@OneToOne
-	@JoinColumn(name = "deliverydate", referencedColumnName = "delivery_date")
-	private ProductOrderDetails productorderdetails;
-	
-	@OneToOne
-	@JoinColumn(name = "deliverystatus", referencedColumnName = "delivery_status")
-	private ProductOrderDetails productorderdetails;*/
-	
-	public int getTracking_id()
-	{
-		return tracking_id;
+
+	public int getTrackingid() {
+		return trackingid;
 	}
 
-	public void setTracking_id(int tracking_id) {
-		this.tracking_id = tracking_id;
+	public void setTrackingid(int trackingid) {
+		this.trackingid = trackingid;
 	}
 
-	public Date getExit_date() {
-		return exit_date;
+	public Date getExitdate() {
+		return exitdate;
 	}
 
-	public void setExit_date(Date exit_date) {
-		this.exit_date = exit_date;
+	public void setExitdate(Date exitdate) {
+		this.exitdate = exitdate;
 	}
 
 	public ProductDetails getProductdetails() {
@@ -89,7 +57,8 @@ public class TrackProductOrder {
 	public void setProductorderdetails(ProductOrderDetails productorderdetails) {
 		this.productorderdetails = productorderdetails;
 	}
-
+	
+	
 	
 	
 }

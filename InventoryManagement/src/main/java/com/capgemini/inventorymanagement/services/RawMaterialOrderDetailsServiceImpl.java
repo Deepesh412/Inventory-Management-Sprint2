@@ -19,31 +19,26 @@ public class RawMaterialOrderDetailsServiceImpl implements RawMaterialOrderDetai
 	
 	@Override
 	public RawMaterialOrderDetails addRawMaterialOrder(RawMaterialOrderDetails r) {
-		// TODO Auto-generated method stub
 		return dao.addRawMaterialOrder(r);
 	}
 
 	@Override
 	public List<RawMaterialOrderDetails> getAllRawMaterialOrders() {
-		// TODO Auto-generated method stub
 		return dao.getAllRawMaterialOrders();
 	}
 
 	@Override
-	public RawMaterialOrderDetails getRawMaterialOrderDetailById(int order_id) {
-		// TODO Auto-generated method stub
-		return dao.getRawMaterialOrderDetailById(order_id);
+	public RawMaterialOrderDetails getRawMaterialOrderDetailById(int orderid) {
+		return dao.getRawMaterialOrderDetailById(orderid);
 	}
 
 	@Override
-	public RawMaterialOrderDetails deleteRawMaterialOrder(int order_id) {
-		// TODO Auto-generated method stub
-		return dao.deleteRawMaterialOrder(order_id);
+	public RawMaterialOrderDetails deleteRawMaterialOrder(int orderid) {
+		return dao.deleteRawMaterialOrder(orderid);
 	}
 
 	@Override
 	public RawMaterialOrderDetails updateRawMaterialOrder(RawMaterialOrderDetails r) {
-		// TODO Auto-generated method stub
 		return dao.updateRawMaterialOrder(r);
 	}
 }

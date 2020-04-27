@@ -2,8 +2,9 @@ package com.capgemini.inventorymanagement.entities;
 
 import java.sql.Date;
 
-//import javax.persistence.CascadeType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -14,31 +15,50 @@ import javax.persistence.Table;
 public class TrackRawMaterialOrder {
 	
 	@Id
-	private int Tracking_id;
-	private Date process_date;
+	private int trackingid;
+	private Date processdate;
     
 	
-	@OneToOne
-	@JoinColumn(name = "RawMaterial_id", referencedColumnName = "rm_id")
-	private RawMaterialDetails Rawmaterialdetails;
+	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+	@JoinColumn(name = "rawMaterialdetails", referencedColumnName = "rawmaterialid")
+	private RawMaterialDetails rawmaterialdetails;
 	
-	@OneToOne
-	@JoinColumn(name = "rawmaterialorder_id", referencedColumnName = "order_id")
-	private RawMaterialOrderDetails Rawmaterialorderdetails;
+	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+	@JoinColumn(name = "rawmaterialorderdetails", referencedColumnName = "orderid")
+	private RawMaterialOrderDetails rawmaterialorderdetails;
 
-	public int getTracking_id() {
-		return Tracking_id;
+	public int getTrackingid() {
+		return trackingid;
 	}
 
-	public void setTracking_id(int tracking_id) {
-		Tracking_id = tracking_id;
+	public void setTrackingid(int trackingid) {
+		this.trackingid = trackingid;
 	}
 
-	public Date getProcess_date() {
-		return process_date;
+	public Date getProcessdate() {
+		return processdate;
 	}
 
-	public void setProcess_date(Date process_date) {
-		this.process_date = process_date;
+	public void setProcessdate(Date processdate) {
+		this.processdate = processdate;
 	}
+
+	public RawMaterialDetails getRawmaterialdetails() {
+		return rawmaterialdetails;
+	}
+
+	public void setRawmaterialdetails(RawMaterialDetails rawmaterialdetails) {
+		this.rawmaterialdetails = rawmaterialdetails;
+	}
+
+	public RawMaterialOrderDetails getRawmaterialorderdetails() {
+		return rawmaterialorderdetails;
+	}
+
+	public void setRawmaterialorderdetails(RawMaterialOrderDetails rawmaterialorderdetails) {
+		this.rawmaterialorderdetails = rawmaterialorderdetails;
+	}
+
+	
+	
 }

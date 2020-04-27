@@ -1,8 +1,9 @@
 package com.capgemini.inventorymanagement.entities;
 import java.sql.Date;
 
-//import javax.persistence.CascadeType;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -15,105 +16,92 @@ import javax.persistence.Table;
 public class RawMaterialOrderDetails {
 
 	@Id
-	private int order_id;
-    private String item_name;
-	private int quantity_unit;
-	private double price_per_unit;
-    private double total_price;
-	private Date order_date;
-	private Date delivery_date;
-	private String delivery_status;
+	private int orderid;
+    private String itemname;
+	private int quantityunit;
+	private double priceperunit;
+    private double totalprice;
+	private Date orderdate;
+	private Date deliverydate;
+	private String deliverystatus;
 	
-	@OneToOne
-	@JoinColumn(name= "Supplier_id", referencedColumnName = "s_id")
-	private SupplierDetails supplierdetails;
-	
-	@OneToOne(mappedBy = "Rawmaterialorderdetails")
-	/*private TrackRawMaterialOrder trackrawmaterialorder;
+	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+	@JoinColumn(name= "supplierId", referencedColumnName = "supplierid")
+	private SupplierDetails supplierId;
 	
 	
-	public TrackRawMaterialOrder getTrackrawmaterialorder() {
-		return trackrawmaterialorder;
+	public int getOrderid() {
+		return orderid;
 	}
 
-	public void setTrackrawmaterialorder(TrackRawMaterialOrder trackrawmaterialorder) {
-		this.trackrawmaterialorder = trackrawmaterialorder;
-	}*/
-
-	public SupplierDetails getSupplierdetails() {
-		return supplierdetails;
+	public void setOrderid(int orderid) {
+		this.orderid = orderid;
 	}
 
-	public void setSupplierdetails(SupplierDetails supplierdetails) {
-		this.supplierdetails = supplierdetails;
+	public String getItemname() {
+		return itemname;
 	}
 
-	public int getOrder_id() {
-		return order_id;
+	public void setItemname(String itemname) {
+		this.itemname = itemname;
 	}
 
-	public void setOrder_id(int order_id) {
-		this.order_id = order_id;
+	public int getQuantityunit() {
+		return quantityunit;
 	}
 
-	public String getItem_name() {
-		return item_name;
+	public void setQuantityunit(int quantityunit) {
+		this.quantityunit = quantityunit;
 	}
 
-	public void setItem_name(String item_name) {
-		this.item_name = item_name;
+	public double getPriceperunit() {
+		return priceperunit;
 	}
 
-	
-	public int getQuantity_unit() {
-		return quantity_unit;
+	public void setPriceperunit(double priceperunit) {
+		this.priceperunit = priceperunit;
 	}
 
-	public void setQuantity_unit(int quantity_unit) {
-		this.quantity_unit = quantity_unit;
+	public double getTotalprice() {
+		return totalprice;
 	}
 
-	public double getPrice_per_unit() {
-		return price_per_unit;
+	public void setTotalprice(double totalprice) {
+		this.totalprice = totalprice;
 	}
 
-	public void setPrice_per_unit(double price_per_unit) {
-		this.price_per_unit = price_per_unit;
+	public Date getOrderdate() {
+		return orderdate;
 	}
 
-	public double getTotal_price() {
-		return total_price;
+	public void setOrderdate(Date orderdate) {
+		this.orderdate = orderdate;
 	}
 
-	public void setTotal_price(double total_price) {
-		this.total_price = total_price;
+	public Date getDeliverydate() {
+		return deliverydate;
 	}
 
-	public Date getOrder_date() {
-		return order_date;
+	public void setDeliverydate(Date deliverydate) {
+		this.deliverydate = deliverydate;
 	}
 
-	public void setOrder_date(Date order_date) {
-		this.order_date = order_date;
+	public String getDeliverystatus() {
+		return deliverystatus;
 	}
 
-	public Date getDelivery_date() {
-		return delivery_date;
+	public void setDeliverystatus(String deliverystatus) {
+		this.deliverystatus = deliverystatus;
 	}
 
-	public void setDelivery_date(Date delivery_date) {
-		this.delivery_date = delivery_date;
+	public SupplierDetails getSupplierId() {
+		return supplierId;
 	}
 
-	public String getDelivery_status() {
-		return delivery_status;
+	public void setSupplierId(SupplierDetails supplierId) {
+		this.supplierId = supplierId;
 	}
-
-	public void setDelivery_status(String delivery_status) {
-		this.delivery_status = delivery_status;
-	}
-
 	
 	
-
+	
 }

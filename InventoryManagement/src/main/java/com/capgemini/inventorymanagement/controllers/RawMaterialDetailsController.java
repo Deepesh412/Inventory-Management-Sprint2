@@ -40,9 +40,9 @@ public class RawMaterialDetailsController {
    	}
 	
 	// Get Particular RawMaterialDetail
-	@GetMapping("/GetRawMaterialDetail/{rm_id}")
-	private ResponseEntity<RawMaterialDetails> getRawMaterialDetailById(@PathVariable("rm_id") int rm_id) {
-		RawMaterialDetails d = serviceobj.getRawMaterialDetailById(rm_id);
+	@GetMapping("/GetRawMaterialDetail/{rawmaterialid}")
+	public ResponseEntity<RawMaterialDetails> getRawMaterialDetailById(@PathVariable("rawmaterialid") int rawmaterialid) {
+		RawMaterialDetails d = serviceobj.getRawMaterialDetailById(rawmaterialid);
 		if (d == null) {
 			throw new IdNotFoundException("Id does not exist,so we couldn't fetch details");
 		} else {
@@ -52,7 +52,7 @@ public class RawMaterialDetailsController {
 	
 	// Get all details
 		@GetMapping("/GetAllDetails")
-		private ResponseEntity<List<RawMaterialDetails>> getAllDetails() {
+		public ResponseEntity<List<RawMaterialDetails>> getAllDetails() {
 			List<RawMaterialDetails> detailslist = serviceobj.getAllDetails();
 			return new ResponseEntity<List<RawMaterialDetails>>(detailslist, new HttpHeaders(), HttpStatus.OK);
 
@@ -60,9 +60,9 @@ public class RawMaterialDetailsController {
 		
 		
 		// Delete details
-		@DeleteMapping("/DeleteDetails/{rm_id}")
-		private ResponseEntity<String> deleteRawMaterialDetail(@PathVariable("rm_id") int rm_id) {
-			RawMaterialDetails d = serviceobj.deleteRawMaterialDetail(rm_id);
+		@DeleteMapping("/DeleteDetails/{rawmaterialid}")
+		public ResponseEntity<String> deleteRawMaterialDetail(@PathVariable("rawmaterialid") int rawmaterialid) {
+			RawMaterialDetails d = serviceobj.deleteRawMaterialDetail(rawmaterialid);
 			if (d == null) {
 				throw new IdNotFoundException("Delete details Unsuccessful,Provided Id does not exist");
 			} else {

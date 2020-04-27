@@ -2,47 +2,44 @@ package com.capgemini.inventorymanagement.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="supplierdetails")
 public class SupplierDetails {
 	@Id
-	private int s_id;
-	private String supplier_name;
-	private String material_name;
+	private int supplierid;
+	private String suppliername;
+	private String materialname;
 	private String address;
 	private long phonenumber;
-	private String email_id;
+	private String emailid;
 	
-	@OneToOne(mappedBy ="supplierdetails")
-	//private RawMaterialOrderDetails RMorderdetails;
 	
-	/*public RawMaterialOrderDetails getRMorderdetails() {
-		return RMorderdetails;
-	}
-	public void setRMorderdetails(RawMaterialOrderDetails rMorderdetails) {
-		RMorderdetails = rMorderdetails;
-	}*/
 	
-	public int getS_id() {
-		return s_id;
+	public int getSupplierid() {
+		return supplierid;
 	}
-	public void setS_id(int s_id) {
-		this.s_id = s_id;
+	public void setSupplierid(int supplierid) {
+		this.supplierid = supplierid;
 	}
-	public String getSupplier_name() {
-		return supplier_name;
+	public String getSuppliername() {
+		return suppliername;
 	}
-	public void setSupplier_name(String supplier_name) {
-		this.supplier_name = supplier_name;
+	public void setSuppliername(String suppliername) {
+		this.suppliername = suppliername;
 	}
-	public String getMaterial_name() {
-		return material_name;
+	public String getMaterialname() {
+		return materialname;
 	}
-	public void setMaterial_name(String material_name) {
-		this.material_name = material_name;
+	public void setMaterialname(String materialname) {
+		this.materialname = materialname;
+	}
+	public String getEmailid() {
+		return emailid;
+	}
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
 	}
 	public String getAddress() {
 		return address;
@@ -56,10 +53,5 @@ public class SupplierDetails {
 	public void setPhonenumber(long phonenumber) {
 		this.phonenumber = phonenumber;
 	}
-	public String getEmail_id() {
-		return email_id;
-	}
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
-	}
+
 }

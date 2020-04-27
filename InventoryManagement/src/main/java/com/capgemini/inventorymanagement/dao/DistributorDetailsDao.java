@@ -10,10 +10,6 @@ public interface DistributorDetailsDao {
 
 	List<DistributorDetails> getAllDistributors();
 	
-    DistributorDetails getDistributorDetail(int D_id);
+    DistributorDetails getDistributorDetail(int distributorid);
 	
-	DistributorDetails deleteDistributor(int D_id);
-
-	DistributorDetails updateDistributor(DistributorDetails d);
-
 }

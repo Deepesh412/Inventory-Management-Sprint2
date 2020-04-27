@@ -42,16 +42,16 @@ import com.capgemini.inventorymanagement.services.ProductDetailsService;
 
 			//Get all users
 			@GetMapping("/GetAllProducts")
-			private ResponseEntity<List<ProductDetails>> getAllProducts() 
+			public ResponseEntity<List<ProductDetails>> getAllProducts() 
 			    {
 				List<ProductDetails> productlist = serviceobj.getAllProducts();
 				return new ResponseEntity<List<ProductDetails>>(productlist, new HttpHeaders(), HttpStatus.OK);
 		        }
 			
 			// Get Particular ProductDetail
-			@GetMapping("/GetProductDetail/{p_id}")
-			private ResponseEntity<ProductDetails> getProductDetailsById(@PathVariable("p_id") int p_id) {
-				ProductDetails d = serviceobj.getProductDetailsById(p_id);
+			@GetMapping("/GetProductDetail/{productid}")
+			public ResponseEntity<ProductDetails> getProductDetailsById(@PathVariable("productid") int productid) {
+				ProductDetails d = serviceobj.getProductDetailsById(productid);
 				if (d == null) {
 					throw new IdNotFoundException("Id does not exist,so we couldn't fetch details");
 				} else {
@@ -72,10 +72,10 @@ import com.capgemini.inventorymanagement.services.ProductDetailsService;
 				}
 				
 			// Delete User
-			@DeleteMapping("/DeleteProduct/{Product_Id}")
-			private ResponseEntity<String> deleteProduct(@PathVariable("Product_Id") int Product_Id)
+			@DeleteMapping("/DeleteProduct/{productid}")
+			public ResponseEntity<String> deleteProduct(@PathVariable("productid") int productid)
 				{
-				ProductDetails e = serviceobj.deleteProduct(Product_Id);
+				ProductDetails e = serviceobj.deleteProduct(productid);
 					if (e == null) {
 						throw new IdNotFoundException("Delete Operation Unsuccessful,Provided Id does not exist");
 					} else {
@@ -85,7 +85,7 @@ import com.capgemini.inventorymanagement.services.ProductDetailsService;
 			
 			
 			@ExceptionHandler(IdNotFoundException.class)
-			public ResponseEntity<String> IdNotFound(IdNotFoundException p) {
+			public ResponseEntity<String> idNotFound(IdNotFoundException p) {
 				return new ResponseEntity<String>(p.getMessage(), HttpStatus.NOT_FOUND);
 			}
 			

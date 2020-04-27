@@ -20,32 +20,27 @@ public class RawMaterialDetailsServiceImpl implements RawMaterialDetailsService
 	
 	@Override
 	public RawMaterialDetails addDetails(RawMaterialDetails r) {
-		// TODO Auto-generated method stub
 		return dao.addDetails(r);
 	}
 
 	@Override
 	public List<RawMaterialDetails> getAllDetails() {
-		// TODO Auto-generated method stub
 		return dao.getAllDetails();
 	}
 
 	@Override
-	public RawMaterialDetails deleteRawMaterialDetail(int rm_id) {
-		// TODO Auto-generated method stub
-		return dao.deleteRawMaterialDetail(rm_id);
+	public RawMaterialDetails deleteRawMaterialDetail(int rawmaterialid) {
+		return dao.deleteRawMaterialDetail(rawmaterialid);
 	}
 
 	@Override
 	public RawMaterialDetails updateDetails(RawMaterialDetails r) {
-		// TODO Auto-generated method stub
 		return dao.updateDetails(r);
 	}
 
 	@Override
-	public RawMaterialDetails getRawMaterialDetailById(int rm_id) {
-		// TODO Auto-generated method stub
-		return dao.getRawMaterialDetailById(rm_id);
+	public RawMaterialDetails getRawMaterialDetailById(int rawmaterialid) {
+		return dao.getRawMaterialDetailById(rawmaterialid);
 	}
 
 }

@@ -10,10 +10,7 @@ public interface SupplierDetailsDao {
 
 	List<SupplierDetails> getAllSuppliers();
 	
-	SupplierDetails getSupplierById(int s_id);
+	SupplierDetails getSupplierById(int supplierid);
 
-	SupplierDetails deleteSupplier(int s_id);
-
-	SupplierDetails updateSupplier(SupplierDetails s);
 
 }

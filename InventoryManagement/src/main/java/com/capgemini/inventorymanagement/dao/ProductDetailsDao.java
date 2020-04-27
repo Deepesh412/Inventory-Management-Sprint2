@@ -10,9 +10,9 @@ public interface ProductDetailsDao {
 	
 	List<ProductDetails> getAllProducts();
 	
-	ProductDetails getProductDetailsById(int p_id);
+	ProductDetails getProductDetailsById(int productid);
 	
-	ProductDetails deleteProduct(int p_id);
+	ProductDetails deleteProduct(int productid);
 	
 	ProductDetails updateProduct(ProductDetails p);
 	

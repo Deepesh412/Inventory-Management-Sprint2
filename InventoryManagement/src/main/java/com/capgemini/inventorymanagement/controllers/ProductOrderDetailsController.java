@@ -42,7 +42,7 @@ public class ProductOrderDetailsController {
 
 	//Get all ProductOrders
 	@GetMapping("/GetAllProductOrders")
-	private ResponseEntity<List<ProductOrderDetails>> getAllProductOrders() 
+	public ResponseEntity<List<ProductOrderDetails>> getAllProductOrders() 
 	    {
 		List<ProductOrderDetails> productorderlist = serviceobj.getAllProductDetails();
 		return new ResponseEntity<List<ProductOrderDetails>>(productorderlist, new HttpHeaders(), HttpStatus.OK);
@@ -50,9 +50,9 @@ public class ProductOrderDetailsController {
 	
 
 	// Get Particular ProductorderDetail
-		@GetMapping("/GetProductOrderDetail/{order_id}")
-		private ResponseEntity<ProductOrderDetails> getProductOrderDetailsById(@PathVariable("order_id") int order_id) {
-			ProductOrderDetails d = serviceobj.getProductOrderDetailsById(order_id);
+		@GetMapping("/GetProductOrderDetail/{orderid}")
+		public ResponseEntity<ProductOrderDetails> getProductOrderDetailsById(@PathVariable("orderid") int orderid) {
+			ProductOrderDetails d = serviceobj.getProductOrderDetailsById(orderid);
 			if (d == null) {
 				throw new IdNotFoundException("Id does not exist,so we couldn't fetch details");
 			} else {
@@ -73,10 +73,10 @@ public class ProductOrderDetailsController {
 		}
 		
 	// Delete ProductOrder
-	@DeleteMapping("/DeleteProductOrder/{order_id}")
-	private ResponseEntity<String> deleteProductOrder(@PathVariable("Order_id") int order_id)
+	@DeleteMapping("/DeleteProductOrder/{orderid}")
+	public ResponseEntity<String> deleteProductOrder(@PathVariable("Orderid") int orderid)
 		{
-			ProductOrderDetails e = serviceobj.deleteProductOrder(order_id);
+			ProductOrderDetails e = serviceobj.deleteProductOrder(orderid);
 			if (e == null) {
 				throw new IdNotFoundException("Delete Operation Unsuccessful,Provided Id does not exist");
 			} else {

@@ -17,26 +17,25 @@ public class RawMaterialOrderDetailsDaoImpl implements RawMaterialOrderDetailsDa
 
 	@Override
 	public RawMaterialOrderDetails addRawMaterialOrder(RawMaterialOrderDetails r) {
-		RawMaterialOrderDetails e = em.merge(r);
-		return e;
+	
+		return em.merge(r);
 	}
 
 	@Override
 	public List<RawMaterialOrderDetails> getAllRawMaterialOrders() {
 		Query q=em.createQuery("select m from RawMaterialOrderDetails m");
-		List<RawMaterialOrderDetails> RawMaterialOrderlist=q.getResultList();
-		return RawMaterialOrderlist;
+		List<RawMaterialOrderDetails> rawMaterialOrderlist=q.getResultList();
+		return rawMaterialOrderlist;
 	}
 
 	@Override
-	public RawMaterialOrderDetails getRawMaterialOrderDetailById(int order_id) {
-		// TODO Auto-generated method stub
-		return em.find(RawMaterialOrderDetails.class, order_id);
+	public RawMaterialOrderDetails getRawMaterialOrderDetailById(int orderid) {
+		return em.find(RawMaterialOrderDetails.class, orderid);
 	}
 
 	@Override
-	public RawMaterialOrderDetails deleteRawMaterialOrder(int order_id) {
-		RawMaterialOrderDetails rd=em.find(RawMaterialOrderDetails.class,order_id);
+	public RawMaterialOrderDetails deleteRawMaterialOrder(int orderid) {
+		RawMaterialOrderDetails rd=em.find(RawMaterialOrderDetails.class,orderid);
 		if(rd!=null)
 			{em.remove(rd);
 			}
@@ -45,19 +44,16 @@ public class RawMaterialOrderDetailsDaoImpl implements RawMaterialOrderDetailsDa
 
 	@Override
 	public RawMaterialOrderDetails updateRawMaterialOrder(RawMaterialOrderDetails r) {
-		// TODO Auto-generated method stub
-				RawMaterialOrderDetails rd=em.find(RawMaterialOrderDetails.class,r.getOrder_id());
+				RawMaterialOrderDetails rd=em.find(RawMaterialOrderDetails.class,r.getOrderid());
 				if(rd!=null)
 				{
 
-					rd.setItem_name(r.getItem_name());
-					rd.setQuantity_unit(r.getQuantity_unit());
-					rd.setPrice_per_unit(r.getPrice_per_unit());
-					rd.setTotal_price(r.getTotal_price());
-					rd.setOrder_date(r.getOrder_date());
-					rd.setDelivery_date(r.getDelivery_date());
-					rd.setDelivery_status(r.getDelivery_status());
-
+					rd.setDeliverydate(r.getDeliverydate());
+					rd.setOrderdate(r.getOrderdate());
+					rd.setDeliverystatus(r.getDeliverystatus());
+					rd.setPriceperunit(r.getPriceperunit());
+					rd.setQuantityunit(r.getQuantityunit());
+					rd.setTotalprice(r.getTotalprice());
 
 
 				}

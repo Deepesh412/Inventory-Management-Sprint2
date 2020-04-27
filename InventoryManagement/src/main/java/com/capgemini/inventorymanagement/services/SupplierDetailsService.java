@@ -8,12 +8,8 @@ public interface SupplierDetailsService {
 
 	SupplierDetails addSupplier(SupplierDetails s);
 
-	SupplierDetails getSupplierById(int s_id);
+	SupplierDetails getSupplierById(int supplierid);
 	
 	List<SupplierDetails> getAllSuppliers();
-
-	SupplierDetails deleteSupplier(int s_id);
-
-	SupplierDetails updateSupplier(SupplierDetails s);
 
 }

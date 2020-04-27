@@ -19,50 +19,20 @@ public class SupplierDetailsDaoImpl implements SupplierDetailsDao {
 	
 	@Override
 	public SupplierDetails addSupplier(SupplierDetails s) {
-		// TODO Auto-generated method stub
-		SupplierDetails e=em.merge(s);
-		return e;
+		return em.merge(s);
 	}
 
 	@Override
-	public List<SupplierDetails> getAllSuppliers() {
-		// TODO Auto-generated method stub
+	public List<SupplierDetails> getAllSuppliers(){
 		Query q=em.createQuery("select m from SupplierDetails m");
 		List<SupplierDetails> supplierlist=q.getResultList();
 		return supplierlist;
 	}
 
-	@Override
-    public SupplierDetails deleteSupplier(int s_id) 
-	{
-		// TODO Auto-generated method stub
-		SupplierDetails sd=em.find(SupplierDetails.class,s_id);
-		if(sd!=null)
-			{em.remove(sd);
-			}
-        return sd;
-	}
 
 	@Override
-	public SupplierDetails updateSupplier(SupplierDetails s) {
-		// TODO Auto-generated method stub
-		SupplierDetails sd=em.find(SupplierDetails.class,s.getS_id());
-		if(sd!=null)
-		{
-
-			sd.setSupplier_name(s.getSupplier_name());
-			sd.setMaterial_name(s.getMaterial_name());
-			sd.setAddress(s.getAddress());
-			sd.setPhonenumber(s.getPhonenumber());
-			sd.setEmail_id(s.getEmail_id());
-		}
-		return sd;
-}
-
-	@Override
-	public SupplierDetails getSupplierById(int s_id) {
-	// TODO Auto-generated method stub
-		return em.find(SupplierDetails.class, s_id);
+	public SupplierDetails getSupplierById(int supplierid) {
+		return em.find(SupplierDetails.class, supplierid);
 	}
 	
 }	

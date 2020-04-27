@@ -2,52 +2,55 @@ package com.capgemini.inventorymanagement.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Distributordetails")
 public class DistributorDetails {
 	@Id
-	private int D_id;
-	private String distributor_name;
-	private String product_name;
+	private int distributorid;
+	private String distributorname;
+	private String productname;
 	private String address;
 	private long phonenumber;
-	private String email_id;
-	
-	@OneToOne(mappedBy = "Distributordetails")
-	//private ProductOrderDetails productorderdetails;
+	private String emailid;
 	
 
-	public int getD_id() {
-		return D_id;
+	public int getDistributorid() {
+		return distributorid;
 	}
 
-	public void setD_id(int d_id) {
-		D_id = d_id;
+	public void setDistributorid(int distributorid) {
+		this.distributorid = distributorid;
 	}
 
-	public String getDistributor_name() {
-		return distributor_name;
+	public String getDistributorname() {
+		return distributorname;
 	}
 
-	public void setDistributor_name(String distributor_name) {
-		this.distributor_name = distributor_name;
+	public void setDistributorname(String distributorname) {
+		this.distributorname = distributorname;
 	}
 
-	public String getProduct_name() {
-		return product_name;
+	public String getProductname() {
+		return productname;
 	}
 
-	public void setProduct_name(String product_name) {
-		this.product_name = product_name;
+	public void setProductname(String productname) {
+		this.productname = productname;
 	}
 
+	public String getEmailid() {
+		return emailid;
+	}
+
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+	
 	public String getAddress() {
 		return address;
 	}
-
 	public void setAddress(String address) {
 		this.address = address;
 	}
@@ -60,20 +63,6 @@ public class DistributorDetails {
 		this.phonenumber = phonenumber;
 	}
 
-	public String getEmail_id() {
-		return email_id;
-	}
 
-	public void setEmail_id(String email_id) {
-		this.email_id = email_id;
-	}
-
-	/*public ProductOrderDetails getProductorderdetails() {
-		return productorderdetails;
-	}
-
-	public void setProductorderdetails(ProductOrderDetails productorderdetails) {
-		this.productorderdetails = productorderdetails;
-	}*/
 
 	}

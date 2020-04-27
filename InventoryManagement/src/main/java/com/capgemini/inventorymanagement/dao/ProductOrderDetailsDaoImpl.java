@@ -18,28 +18,25 @@ public class ProductOrderDetailsDaoImpl implements ProductOrderDetailsDao{
 	
 	@Override
 	public ProductOrderDetails addProductOrder(ProductOrderDetails p) {
-		// TODO Auto-generated method stub
-		ProductOrderDetails e = em.merge(p);
-		return e;
+		return em.merge(p);
 	}
 
 	@Override
 	public List<ProductOrderDetails> getAllProductDetails() {
-		// TODO Auto-generated method stub
 		Query q=em.createQuery("select m from ProductOrderDetails m");
 		List<ProductOrderDetails> productorderlist=q.getResultList();
 		return productorderlist;
 	}
 
 	@Override
-	public ProductOrderDetails getProductOrderDetailsById(int order_id) {
+	public ProductOrderDetails getProductOrderDetailsById(int orderid) {
 		
-		return em.find(ProductOrderDetails.class, order_id);
+		return em.find(ProductOrderDetails.class, orderid);
 	}
 
 	@Override
-	public ProductOrderDetails deleteProductOrder(int order_id) {
-		ProductOrderDetails pod=em.find(ProductOrderDetails.class,order_id);
+	public ProductOrderDetails deleteProductOrder(int orderid) {
+		ProductOrderDetails pod=em.find(ProductOrderDetails.class,orderid);
 		if(pod!=null)
 			{
 			em.remove(pod);
@@ -49,17 +46,15 @@ public class ProductOrderDetailsDaoImpl implements ProductOrderDetailsDao{
 
 	@Override
 	public ProductOrderDetails updateproductorder(ProductOrderDetails p) {
-		ProductOrderDetails pod=em.find(ProductOrderDetails.class,p.getOrder_id());
+		ProductOrderDetails pod=em.find(ProductOrderDetails.class,p.getOrderid());
 		if(pod!=null)
 		{
-
-			pod.setItem_name(p.getItem_name());
-			pod.setQuantity_unit(p.getQuantity_unit());
-			pod.setPrice_per_unit(p.getPrice_per_unit());
-			pod.setTotal_price(p.getTotal_price());
-			pod.setOrder_date(p.getOrder_date());
-			pod.setDelivery_date(p.getDelivery_date());
-			pod.setDelivery_status(p.getDelivery_status());
+          pod.setDeliverydate(p.getDeliverydate());
+          pod.setDeliverystatus(p.getDeliverystatus());
+          pod.setOrderdate(p.getOrderdate());
+          pod.setPriceperunit(p.getPriceperunit());
+          pod.setQuantityunit(p.getQuantityunit());
+          pod.setTotalprice(p.getTotalprice());
 		}
 		return pod;
 	}

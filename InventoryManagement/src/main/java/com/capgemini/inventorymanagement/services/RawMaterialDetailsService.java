@@ -11,9 +11,9 @@ public interface RawMaterialDetailsService
      
      List<RawMaterialDetails>getAllDetails();
      
-     RawMaterialDetails getRawMaterialDetailById(int rm_id);
+     RawMaterialDetails getRawMaterialDetailById(int rawmaterialid);
      
-     RawMaterialDetails deleteRawMaterialDetail(int rm_id);
+     RawMaterialDetails deleteRawMaterialDetail(int rawmaterialid);
      
      RawMaterialDetails updateDetails(RawMaterialDetails r);
 }

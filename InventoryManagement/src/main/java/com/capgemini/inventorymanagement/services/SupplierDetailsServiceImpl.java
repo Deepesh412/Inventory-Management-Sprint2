@@ -21,31 +21,16 @@ public class SupplierDetailsServiceImpl implements SupplierDetailsService{
 	
 	@Override
 	public SupplierDetails addSupplier(SupplierDetails s) {
-		// TODO Auto-generated method stub
 		return dao.addSupplier(s);
 	}
 
 	@Override
 	public List<SupplierDetails> getAllSuppliers() {
-		// TODO Auto-generated method stub
 		return dao.getAllSuppliers();
 	}
 
 	@Override
-	public SupplierDetails deleteSupplier(int s_id) {
-		// TODO Auto-generated method stub
-		return dao.deleteSupplier(s_id);
-	}
-
-	@Override
-	public SupplierDetails updateSupplier(SupplierDetails s) {
-		// TODO Auto-generated method stub
-		return dao.updateSupplier(s);
-	}
-
-	@Override
-	public SupplierDetails getSupplierById(int s_id) {
-		// TODO Auto-generated method stub
-		return dao.getSupplierById(s_id);
+	public SupplierDetails getSupplierById(int supplierid) {
+		return dao.getSupplierById(supplierid);
 	}
 }

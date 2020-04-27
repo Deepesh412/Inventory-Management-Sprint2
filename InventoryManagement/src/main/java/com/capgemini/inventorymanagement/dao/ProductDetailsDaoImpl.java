@@ -19,8 +19,7 @@ public class ProductDetailsDaoImpl implements ProductDetailsDao {
 
 	@Override
 	public ProductDetails addProduct(ProductDetails p) {
-		ProductDetails e = em.merge(p);
-		return e;
+		return em.merge(p);
 	}
 
 	@Override
@@ -31,14 +30,13 @@ public class ProductDetailsDaoImpl implements ProductDetailsDao {
 	}
 
 	@Override
-	public ProductDetails getProductDetailsById(int p_id) {
-		// TODO Auto-generated method stub
-		return em.find(ProductDetails.class, p_id);
+	public ProductDetails getProductDetailsById(int productid) {
+		return em.find(ProductDetails.class, productid);
 	}
 
 	@Override
-	public ProductDetails deleteProduct(int p_id) {
-		ProductDetails pd=em.find(ProductDetails.class,p_id);
+	public ProductDetails deleteProduct(int productid) {
+		ProductDetails pd=em.find(ProductDetails.class,productid);
 		if(pd!=null)
 			{em.remove(pd);
 			}
@@ -47,15 +45,14 @@ public class ProductDetailsDaoImpl implements ProductDetailsDao {
 
 	@Override
 	public ProductDetails updateProduct(ProductDetails p) {
-		// TODO Auto-generated method stub
-				ProductDetails pd=em.find(ProductDetails.class,p.getP_id());
+				ProductDetails pd=em.find(ProductDetails.class,p.getProductid());
 				if(pd!=null)
 				{
 
-					pd.setManufacturing_date(p.getManufacturing_date());
-					pd.setExpiry_date(p.getExpiry_date());
-					pd.setPrice_per_unit(p.getPrice_per_unit());
-					pd.setQuantity_unit(p.getQuantity_unit());
+					pd.setExpirydate(p.getExpirydate());
+					pd.setManufacturingdate(p.getManufacturingdate());
+					pd.setPriceperunit(p.getPriceperunit());
+					pd.setQuantityunit(p.getQuantityunit());
 				}
 				return pd;
 	}

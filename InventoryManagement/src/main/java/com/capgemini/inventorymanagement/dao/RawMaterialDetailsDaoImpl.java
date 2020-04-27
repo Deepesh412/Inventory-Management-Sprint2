@@ -20,8 +20,8 @@ EntityManager em;
 
 @Override
 public RawMaterialDetails addDetails(RawMaterialDetails r) {
-	RawMaterialDetails d = em.merge(r);
-	return d;
+	
+	return em.merge(r);
 }
 
 @Override
@@ -32,8 +32,8 @@ public List<RawMaterialDetails> getAllDetails() {
 }
 
 @Override
-public RawMaterialDetails deleteRawMaterialDetail(int rm_id) {
-	RawMaterialDetails rm = em.find(RawMaterialDetails.class, rm_id);
+public RawMaterialDetails deleteRawMaterialDetail(int rawmaterialid) {
+	RawMaterialDetails rm = em.find(RawMaterialDetails.class, rawmaterialid);
 	if(rm!=null)
 	{
 		em.remove(rm);
@@ -43,20 +43,20 @@ public RawMaterialDetails deleteRawMaterialDetail(int rm_id) {
 
 @Override
 public RawMaterialDetails updateDetails(RawMaterialDetails r) {
-	RawMaterialDetails rm = em.find(RawMaterialDetails.class, r.getRm_id());
+	RawMaterialDetails rm = em.find(RawMaterialDetails.class, r.getRawmaterialid());
 	if(rm!=null)
 	{
-		rm.setManufacturing_date(r.getManufacturing_date());
-		rm.setExpiry_date(r.getExpiry_date());
-		rm.setPrice_per_unit(r.getPrice_per_unit());
-		rm.setQuantity_unit(r.getQuantity_unit());
+		rm.setExpirydate(r.getExpirydate());
+		rm.setManufacturingdate(r.getManufacturingdate());
+		rm.setPriceperunit(r.getPriceperunit());
+		rm.setQuantityunit(r.getQuantityunit());
 	}
 	return rm;
 }
 
 @Override
-public RawMaterialDetails getRawMaterialDetailById(int rm_id) {
+public RawMaterialDetails getRawMaterialDetailById(int rawmaterialid) {
         
-	return em.find(RawMaterialDetails.class, rm_id);
+	return em.find(RawMaterialDetails.class, rawmaterialid);
 }
 }

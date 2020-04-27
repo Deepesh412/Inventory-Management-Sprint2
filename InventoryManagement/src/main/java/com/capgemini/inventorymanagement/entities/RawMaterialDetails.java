@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -12,72 +11,51 @@ import javax.persistence.Table;
 public class RawMaterialDetails 
 {
 	    @Id
-		private int rm_id;
-		private String item_name;
-		private int quantity_unit;
-		private double price_per_unit;
-		private Date manufacturing_date;
-	    private Date expiry_date;
-
-	    @OneToOne(mappedBy = "Rawmaterialdetails")
-	   // private TrackRawMaterialOrder trackrawmaterialorder;
+		private int rawmaterialid;
+		private String itemname;
+		private int quantityunit;
+		private double priceperunit;
+		private Date manufacturingdate;
+	    private Date expirydate;
+	   
 	    
-	    
-		/*public TrackRawMaterialOrder getTrackrawmaterialorder() {
-			return trackrawmaterialorder;
+		public int getRawmaterialid() {
+			return rawmaterialid;
+		}
+		public void setRawmaterialid(int rawmaterialid) {
+			this.rawmaterialid = rawmaterialid;
+		}
+		public String getItemname() {
+			return itemname;
+		}
+		public void setItemname(String itemname) {
+			this.itemname = itemname;
+		}
+		public int getQuantityunit() {
+			return quantityunit;
+		}
+		public void setQuantityunit(int quantityunit) {
+			this.quantityunit = quantityunit;
+		}
+		public double getPriceperunit() {
+			return priceperunit;
+		}
+		public void setPriceperunit(double priceperunit) {
+			this.priceperunit = priceperunit;
+		}
+		public Date getManufacturingdate() {
+			return manufacturingdate;
+		}
+		public void setManufacturingdate(Date manufacturingdate) {
+			this.manufacturingdate = manufacturingdate;
+		}
+		public Date getExpirydate() {
+			return expirydate;
+		}
+		public void setExpirydate(Date expirydate) {
+			this.expirydate = expirydate;
 		}
 
-		public void setTrackrawmaterialorder(TrackRawMaterialOrder trackrawmaterialorder) {
-			this.trackrawmaterialorder = trackrawmaterialorder;
-		}*/
-
+	   
 		
-		public int getRm_id() {
-			return rm_id;
-		}
-
-		public void setRm_id(int rm_id) {
-			this.rm_id = rm_id;
-		}
-
-		public String getItem_name() {
-			return item_name;
-		}
-
-		public void setItem_name(String item_name) {
-			this.item_name = item_name;
-		}
-
-		public int getQuantity_unit() {
-			return quantity_unit;
-		}
-
-		public void setQuantity_unit(int quantity_unit) {
-			this.quantity_unit = quantity_unit;
-		}
-
-		public double getPrice_per_unit() {
-			return price_per_unit;
-		}
-
-		public void setPrice_per_unit(double price_per_unit) {
-			this.price_per_unit = price_per_unit;
-		}
-
-		public Date getManufacturing_date() {
-			return manufacturing_date;
-		}
-
-		public void setManufacturing_date(Date manufacturing_date) {
-			this.manufacturing_date = manufacturing_date;
-		}
-
-		public Date getExpiry_date() {
-			return expiry_date;
-		}
-
-		public void setExpiry_date(Date expiry_date) {
-			this.expiry_date = expiry_date;
-		}
-
 }

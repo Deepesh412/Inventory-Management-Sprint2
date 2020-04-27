@@ -9,9 +9,9 @@ public interface ProductOrderDetailsService {
 	    
 	    List<ProductOrderDetails>getAllProductDetails();
 	    
-	    ProductOrderDetails getProductOrderDetailsById(int order_id);
+	    ProductOrderDetails getProductOrderDetailsById(int orderid);
 	    
-	    ProductOrderDetails deleteProductOrder(int order_id);
+	    ProductOrderDetails deleteProductOrder(int orderid);
 	  
 	    ProductOrderDetails updateproductorder(ProductOrderDetails p);
 }

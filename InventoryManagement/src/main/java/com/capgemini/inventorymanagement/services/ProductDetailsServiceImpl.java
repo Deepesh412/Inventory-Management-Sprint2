@@ -19,31 +19,26 @@ public class ProductDetailsServiceImpl implements ProductDetailsService {
 	
 	@Override
 	public ProductDetails addProduct(ProductDetails p) {
-		// TODO Auto-generated method stub
 		return dao.addProduct(p);
 	}
 
 	@Override
 	public List<ProductDetails> getAllProducts() {
-		// TODO Auto-generated method stub
 		return dao.getAllProducts();
 	}
 
 	@Override
-	public ProductDetails getProductDetailsById(int p_id) {
-		// TODO Auto-generated method stub
-		return dao.getProductDetailsById(p_id);
+	public ProductDetails getProductDetailsById(int productid) {
+		return dao.getProductDetailsById(productid);
 	}
 
 	@Override
-	public ProductDetails deleteProduct(int p_id) {
-		// TODO Auto-generated method stub
-		return dao.deleteProduct(p_id);
+	public ProductDetails deleteProduct(int productid) {
+		return dao.deleteProduct(productid);
 	}
 
 	@Override
 	public ProductDetails updateProduct(ProductDetails p) {
-		// TODO Auto-generated method stub
 		return dao.updateProduct(p);
 	}
 
