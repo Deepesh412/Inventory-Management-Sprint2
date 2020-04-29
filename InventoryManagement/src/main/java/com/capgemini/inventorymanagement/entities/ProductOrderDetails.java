@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -25,12 +24,13 @@ public class ProductOrderDetails {
 	private String deliverystatus;
 	
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-	@JoinColumn(name = "distributorId", referencedColumnName = "distributorid")
-	private DistributorDetails distributorId;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "distributorid")
+	private DistributorDetails distributordetails;
 	
 	
-
+    @OneToOne(mappedBy = "productorderdetails")
 
 	public int getOrderid() {
 		return orderid;
@@ -111,19 +111,21 @@ public class ProductOrderDetails {
 	}
 
 
-	public DistributorDetails getDistributorId() {
-		return distributorId;
+	public DistributorDetails getDistributordetails() {
+		return distributordetails;
 	}
 
 
-	public void setDistributorId(DistributorDetails distributorId) {
-		this.distributorId = distributorId;
+	public void setDistributordetails(DistributorDetails distributordetails) {
+		this.distributordetails = distributordetails;
 	}
+
+
 	
+
+
 	
-	
-	
-	
+
 }
 	
 	

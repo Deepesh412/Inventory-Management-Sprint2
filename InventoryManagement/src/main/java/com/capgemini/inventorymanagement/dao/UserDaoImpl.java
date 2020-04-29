@@ -49,7 +49,7 @@ public class UserDaoImpl implements UserDao {
 		if(ud!=null)
 		{
 
-			ud.setUsername(u.getUsername());
+			ud.setUserName(u.getUserName());
 			ud.setUserPassword(u.getUserPassword());
 			ud.setUserPhoneno(u.getUserPhoneno());
 			ud.setUserEmail(u.getUserEmail());
@@ -61,7 +61,7 @@ public class UserDaoImpl implements UserDao {
 	public Boolean loginUser(Userdata u) 
 	{
 		Query q = em.createQuery("select m from Userdata m where m.username=?1 and m.userPassword=?2");
-		String a = u.getUsername();
+		String a = u.getUserName();
 		String b = u.getUserPassword();
 		q.setParameter(1, a);
 		q.setParameter(2, b);

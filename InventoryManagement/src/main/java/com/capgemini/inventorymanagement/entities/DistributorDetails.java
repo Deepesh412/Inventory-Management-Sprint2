@@ -2,12 +2,14 @@ package com.capgemini.inventorymanagement.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Distributordetails")
+@Table(name = "distributordetails")
 public class DistributorDetails {
 	@Id
+	
 	private int distributorid;
 	private String distributorname;
 	private String productname;
@@ -15,7 +17,8 @@ public class DistributorDetails {
 	private long phonenumber;
 	private String emailid;
 	
-
+    @OneToOne(mappedBy = "distributordetails")
+	
 	public int getDistributorid() {
 		return distributorid;
 	}

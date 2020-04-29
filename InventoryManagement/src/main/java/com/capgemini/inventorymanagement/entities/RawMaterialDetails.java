@@ -4,10 +4,11 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Rawmaterialdetails")
+@Table(name = "rawmaterialdetails")
 public class RawMaterialDetails 
 {
 	    @Id
@@ -18,6 +19,7 @@ public class RawMaterialDetails
 		private Date manufacturingdate;
 	    private Date expirydate;
 	   
+	    @OneToOne(mappedBy = "rawmaterialdetails")
 	    
 		public int getRawmaterialid() {
 			return rawmaterialid;

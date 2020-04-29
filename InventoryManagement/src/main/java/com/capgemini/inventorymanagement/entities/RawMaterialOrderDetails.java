@@ -3,7 +3,6 @@ import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -11,7 +10,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Rawmaterialorderdetails")
+@Table(name = "rawmaterialorderdetails")
 
 public class RawMaterialOrderDetails {
 
@@ -25,10 +24,11 @@ public class RawMaterialOrderDetails {
 	private Date deliverydate;
 	private String deliverystatus;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-	@JoinColumn(name= "supplierId", referencedColumnName = "supplierid")
-	private SupplierDetails supplierId;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name= "supplierid")
+	private SupplierDetails supplierdetails;
 	
+	@OneToOne(mappedBy = "rawmaterialorderdetails")
 	
 	public int getOrderid() {
 		return orderid;
@@ -94,13 +94,16 @@ public class RawMaterialOrderDetails {
 		this.deliverystatus = deliverystatus;
 	}
 
-	public SupplierDetails getSupplierId() {
-		return supplierId;
+	public SupplierDetails getSupplierdetails() {
+		return supplierdetails;
 	}
 
-	public void setSupplierId(SupplierDetails supplierId) {
-		this.supplierId = supplierId;
+	public void setSupplierdetails(SupplierDetails supplierdetails) {
+		this.supplierdetails = supplierdetails;
 	}
+
+	
+	
 	
 	
 	

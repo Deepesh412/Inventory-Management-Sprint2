@@ -4,6 +4,7 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +18,7 @@ public class ProductDetails {
 	private Date manufacturingdate;
     private Date expirydate;
     
+    @OneToOne(mappedBy = "productdetails")
     
 	public int getProductid() {
 		return productid;

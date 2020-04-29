@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ import com.capgemini.inventorymanagement.services.UserService;
 
 @RestController
 @RequestMapping("/user")
-
+@CrossOrigin("http://localhost:4200")
 public class UserController {
 	@Autowired
 	UserService serviceobj;
@@ -38,7 +39,7 @@ public class UserController {
 			throw new IdNotFoundException("Enter Valid Id");
 		}
 		else {
-			return new ResponseEntity<String>("User crested successfully",new HttpHeaders(),HttpStatus.OK);		
+			return new ResponseEntity<String>("User created successfully",new HttpHeaders(),HttpStatus.OK);		
 		}
 	}
 

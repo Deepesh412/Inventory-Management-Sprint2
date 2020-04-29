@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -18,12 +17,12 @@ public class TrackProductOrder {
 	private int trackingid;
 	private Date exitdate;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-	@JoinColumn(name = "productdetails", referencedColumnName = "productid")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "productid")
 	private ProductDetails productdetails;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-	@JoinColumn(name = "productorderdetails", referencedColumnName = "orderid")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "orderid")
 	private ProductOrderDetails productorderdetails;
 
 	public int getTrackingid() {
@@ -57,6 +56,8 @@ public class TrackProductOrder {
 	public void setProductorderdetails(ProductOrderDetails productorderdetails) {
 		this.productorderdetails = productorderdetails;
 	}
+
+	
 	
 	
 	

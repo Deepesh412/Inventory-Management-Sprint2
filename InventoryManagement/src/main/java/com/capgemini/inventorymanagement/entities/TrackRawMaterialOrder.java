@@ -17,14 +17,13 @@ public class TrackRawMaterialOrder {
 	@Id
 	private int trackingid;
 	private Date processdate;
-    
-	
-	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-	@JoinColumn(name = "rawMaterialdetails", referencedColumnName = "rawmaterialid")
+  
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "rawmaterialid")
 	private RawMaterialDetails rawmaterialdetails;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-	@JoinColumn(name = "rawmaterialorderdetails", referencedColumnName = "orderid")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "orderid")
 	private RawMaterialOrderDetails rawmaterialorderdetails;
 
 	public int getTrackingid() {
@@ -60,5 +59,7 @@ public class TrackRawMaterialOrder {
 	}
 
 	
+	
+
 	
 }

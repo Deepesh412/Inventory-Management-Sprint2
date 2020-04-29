@@ -21,31 +21,26 @@ public class UserServiceImpl implements UserService
 	
 	@Override
 	public Userdata addUser(Userdata u) {
-		// TODO Auto-generated method stub
 		return dao.addUser(u);
 	}
 
 	@Override
 	public List<Userdata> getAllUsers() {
-		// TODO Auto-generated method stub
 		return dao.getAllUsers();
 	}
 
 	@Override
 	public Userdata deleteUser(int userId) {
-		// TODO Auto-generated method stub
 		return dao.deleteUser(userId);
 	}
 
 	@Override
 	public Userdata updateUser(Userdata u) {
-		// TODO Auto-generated method stub
 		return dao.updateUser(u);
 	}
 	
 	@Override
 	public Boolean loginUser(Userdata u) {
-		// TODO Auto-generated method stub
 		return dao.loginUser(u);
 	}
 
